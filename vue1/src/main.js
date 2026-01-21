@@ -1,8 +1,22 @@
+// src/main.js
+
+// 1. [QUAN TRỌNG] Import file CSS giao diện mới vào đây
+import './assets/main.css' 
+
 import { createApp } from 'vue'
-import './style.css'
+import { createPinia } from 'pinia'
+
 import App from './App.vue'
+import router from './SOF3081_ASM/router' 
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+// Import Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+
+app.mount('#app')
